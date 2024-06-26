@@ -7,8 +7,8 @@ parser = argparse.ArgumentParser(
                     description='Convert an HTML project folder to Motoko',
                     epilog='Enjoy the program! :)')
 
-parser.add_argument('-s', '--source', required=True, type=str, nargs='?', help='The source of the video or playlist, can be an url or a file with multiple urls')
-parser.add_argument('-d', '--destination', required=True, type=str, nargs='?', help='if you want to download the video as mp4')
+parser.add_argument('-s', '--source', required=True, type=str, nargs='?', help='The source html folder to convert to motoko')
+parser.add_argument('-d', '--destination', required=True, type=str, nargs='?', help='The root of the final motoko project')
 
 args = parser.parse_args()
 
@@ -129,7 +129,7 @@ import Blob "mo:base/Blob";
 
 def main():
     files = folder_to_motoko(args.source, args.destination)
-    generate_html_mo(files)
+    generate_html_mo(files, args.destination)
 
 
 if __name__ == "__main__":
