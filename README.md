@@ -37,4 +37,4 @@ public query func http_request(_request : Frontend.Request) : async Frontend.Res
         return response;
     };
 ```
-My Replace.replace function will replace all the occurances of `__NAME__` and `__AGE__` with `name` and `Time.now() - birth` thus making my html code more dynamic
+My Replace.replace function will replace all the occurances of `__NAME__` and `__AGE__` with `name` and `Time.now() - birth` thus making my html code more dynamic.
