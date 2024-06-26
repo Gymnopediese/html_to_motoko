@@ -94,11 +94,11 @@ import Blob "mo:base/Blob";
             status_code : StatusCode;
         };
 
-    public func get_html(request : Request) : Response {
+    public func http_request(request : Request) : Response {
         let url = request.url;
 """
     for file in files:
-        name = file.split(".")[0].replace("/", "_")
+        name = file.split(".")[0].replace("/", "_").replace("-", "_")
         path = file.split(".")[0]
         mimetype = mimetypes[file.split(".")[1]]
 
