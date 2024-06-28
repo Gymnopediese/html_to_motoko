@@ -26,6 +26,7 @@ html/
 ├── index.html
 ├── favicon.png
 └── image/
+    │
     └── profile.png
 src/
 │
@@ -44,17 +45,19 @@ html/
 ├── index.html
 ├── favicon.png
 └── image/
+    │
     └── profile.png
 src/
 │
+├── main.mo
 └── frontend/
+    │
     └── __html__.mo
     └── index.mo
     └── favicon.mo
     └── image/
+        │
         └── profile.mo
-└── main.mo
-
 ```
 
 ## main.mo ++
