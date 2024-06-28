@@ -1,6 +1,7 @@
 # Transform a html folder to a motoko folder
 ## command
 `python main.py -s/--source <html folder> -d/--destination <motoko root>`
+
 This will generate a folder with all the files converted to .mo.
 ## function
 In the destination, in the file `__html__.mo` the following function is accessible :
@@ -16,6 +17,46 @@ public query func http_request(request : Frontend.Request) : async Frontend.Resp
     return Frontend.http_request(request);
 };
 ```
+## exemple
+
+here is my html folder :
+```
+html/
+│
+├── index.html
+├── favicon.png
+└── image/
+    └── profile.png
+src/
+│
+└── main.mo
+    
+```
+using the following command :
+
+`python main.py -s html -d src/frontend`
+
+### result
+
+```
+html/
+│
+├── index.html
+├── favicon.png
+└── image/
+    └── profile.png
+src/
+│
+└── frontend/
+    └── __html__.mo
+    └── index.mo
+    └── favicon.mo
+    └── image/
+        └── profile.mo
+└── main.mo
+
+```
+
 ## main.mo ++
 This code takes the response and modify it :
 ``` mo
